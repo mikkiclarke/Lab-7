@@ -7,7 +7,7 @@ def menu():
 
 
 def encode(password):
-    pass_list: list[password]
+    password: list[password]
     for i in password:
         j = int(i)
         k = j + 3
@@ -20,7 +20,26 @@ def encode(password):
                 print("1", end="")
             elif k == 12:
                 print("2", end="")
-    return
+
+
+def make_list(password):
+    list1 = []
+    list1[:0] = password
+    password = list1
+    return password
+
+
+def decoder(password):
+    table = {0: '7', 1: '8', 2: '9', 3: '0', 4: '1',
+             5: '2', 6: '3', 7: '4', 8: '5', 9: '6'}
+    encoded = ''
+    password = make_list(password)
+    for i in range(0, len(password)):
+        password[i] = int(password[i])
+
+    for num in password:
+        encoded = encoded+table[num]
+    return encoded
 
 
 def main():
@@ -33,7 +52,7 @@ def main():
         elif option == "2":
             print("The encoded password is ", end="")
             encode(password)
-            print(", and the original password is ")
+            print(f", and the original password is {password}.\n")
         elif option == "3":
             break
 

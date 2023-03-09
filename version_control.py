@@ -26,8 +26,7 @@ def main():
         if option == 1:
             password = input("Please enter your password to encode: ")
             print("Your password has been encoded and stored!\n")
-        if option == 2:
-            print(f"The encoded password is {encoder(password)}, and the original password is {password}.")
+        # add decoder here
         if option == 3:
             break
 
